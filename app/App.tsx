@@ -65,6 +65,13 @@ export function App({ session }: { session: Session }) {
         >
           Restart
         </button>
+        <button
+          type="button"
+          disabled={state.past.length === 0}
+          onClick={() => session.dispatch({ kind: "undo" })}
+        >
+          Undo
+        </button>
         <ControlsPicker current={controller} onChoose={setController} />
       </aside>
     </main>
